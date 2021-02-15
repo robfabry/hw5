@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', function() {
   let allRides = document.querySelector('#all-filter')
   allRides.addEventListener('click', async function(event) { //fix: needed to add comma after 'click'
       event.preventDefault()
-      //console.log(all button was clicked)
+      //console.log(all rides button was clicked)
 
   let response = await fetch(`https://kiei451.com/api/rides.json`)
   let json = await response.json()
@@ -84,3 +84,5 @@ window.addEventListener('DOMContentLoaded', function() {
 })
 
 let nooberPool = document.querySelector('#noober-pool-filter')
+nooberPool.addEventListener('click', async function(event) { //note: don't forget comma after 'click'
+event.preventDefault()
