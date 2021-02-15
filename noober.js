@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
   //listener
   let allRides = document.querySelector('#all-filter')
-  allRides.addEventListener('click' async function (event) {
+  allRides.addEventListener('click', async function(event) { //fix: needed to add comma after 'click'
       event.preventDefault()
       //console.log(all button was clicked)
 
@@ -82,3 +82,5 @@ window.addEventListener('DOMContentLoaded', function() {
    //console.log to confirm thjis works
 
 })
+
+let nooberPool = document.querySelector('#noober-pool-filter')
