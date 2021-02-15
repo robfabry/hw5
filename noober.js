@@ -82,8 +82,3 @@ window.addEventListener('DOMContentLoaded', function() {
    //console.log to confirm thjis works
 
 })
-  
-
-
-
-
