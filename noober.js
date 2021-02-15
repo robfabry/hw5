@@ -69,5 +69,21 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
+  //listener
+  let allRides = document.querySelector('#all-filter')
+  allRides.addEventListener('click' async function (event) {
+      event.preventDefault()
+      //console.log(all button was clicked)
+
+  let response = await fetch(`https://kiei451.com/api/rides.json`)
+  let json = await response.json()
+  document.querySelector('.rides').innerHTML = '' 
+  renderRides(json)
+   //console.log to confirm thjis works
+
 })
+  
+
+
+
 
