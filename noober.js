@@ -87,3 +87,4 @@ let nooberPool = document.querySelector('#noober-pool-filter')
 nooberPool.addEventListener('click', async function(event) { //note: don't forget comma after 'click'
   event.preventDefault()
   //console.log(noober pool button was clicked)
+}
