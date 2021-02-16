@@ -69,17 +69,18 @@ function renderRides(ridesArray) {
 
 window.addEventListener('DOMContentLoaded', function() {
   // YOUR CODE
-  //listener
+  // listener
   let allRides = document.querySelector('#all-filter')
   allRides.addEventListener('click', async function(event) { //fix: needed to add comma after 'click'
       event.preventDefault()
-      //console.log(all rides button was clicked)
+      console.log('all rides button was clicked')
 
   let response = await fetch(`https://kiei451.com/api/rides.json`)
   let json = await response.json()
   document.querySelector('.rides').innerHTML = '' 
+  
   renderRides(json)
-   //console.log to confirm thjis works
+   //console.log to confirm this works
 
 })
 
@@ -87,4 +88,67 @@ let nooberPool = document.querySelector('#noober-pool-filter')
 nooberPool.addEventListener('click', async function(event) { //note: don't forget comma after 'click'
   event.preventDefault()
   //console.log(noober pool button was clicked)
-}
+  
+  let response = await fetch ('https://kiei451.com/api/rides.json')
+  let json = await response.json ()
+  let newArray = []
+  for (let i = 0; i < json.length; i++) {
+    if (levelOfService(json[i]) == 'Noober Pool') {
+      newArray.push(json[i])
+    }
+    document.querySelector('.rides').innerHTML = ''
+    renderRides(newArray)
+  }
+})
+
+let nooberPurple = document.querySelector('#noober-purple-filter')
+nooberPurple.addEventListener('click', async function(event) { //note: don't forget comma after 'click'
+  event.preventDefault()
+  // console.log('noober purple button was clicked')
+  
+  let response = await fetch ('https://kiei451.com/api/rides.json')
+  let json = await response.json ()
+  let newArray = []
+  for (let i = 0; i < json.length; i++) {
+    if (levelOfService(json[i]) == 'Noober Purple') {
+      newArray.push(json[i])
+    }
+    document.querySelector('.rides').innerHTML = ''
+    renderRides(newArray)
+  }
+})
+
+let nooberXl = document.querySelector('#noober-xl-filter')
+nooberXl.addEventListener('click', async function(event){
+  event.preventDefault()
+  // console.log('noober xl button was clicked')
+
+  let response = await fetch ('https://kiei451.com/api/rides.json')
+  let json = await response.json ()
+  let newArray = []
+  for (let i = 0; i < json.length; i++) {
+    if (levelOfService(json[i]) == 'Noober XL') {
+      newArray.push(json[i])
+    }
+    document.querySelector('.rides').innerHTML = ''
+    renderRides(newArray)
+  }    
+})
+
+let nooberX = document.querySelector('#noober-x-filter')
+nooberX.addEventListener('click', async function(event){
+  event.preventDefault()
+  // console.log('noober x button was clicked')
+
+  let response = await fetch ('https://kiei451.com/api/rides.json')
+  let json = await response.json ()
+  let newArray = []
+  for (let i = 0; i < json.length; i++) {
+    if (levelOfService(json[i]) == 'Noober X') {
+      newArray.push(json[i])
+    }
+    document.querySelector('.rides').innerHTML = ''
+    renderRides(newArray)    
+  }    
+})
+}) //fix: needed to close brackets above 'your code'
